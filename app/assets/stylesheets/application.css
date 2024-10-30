@@ -21,7 +21,7 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0 50px;
-    background-color: #E0F7FA;
+    background-color: #50caff;
 }
 
 .window {
@@ -104,3 +104,24 @@ body {
 .create-button:hover {
     transform: scale(1.05);
 }
+
+/* Loader styling */
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #2A60E4; /* Clio Legal Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+

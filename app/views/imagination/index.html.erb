@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Styled Selection App</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
 <div class="window" id="window1">
@@ -25,9 +25,14 @@
 
 <div class="window" id="window2">
   <div class="title">Art</div>
-  <div class="content" id="response-content"></div>
+  <div class="content" id="response-content">
+    <div class="window" id="window2">
+      <div class="title">Art</div>
+      <div class="content" id="response-content">
+        <div class="loader" id="loader"></div>
+      </div>
+    </div>
+  </div>
 </div>
-
-<script src="script.js"></script>
 </body>
 </html>
