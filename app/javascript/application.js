@@ -6,7 +6,7 @@ document.getElementById("create").addEventListener("click", async function() {
     const selectedStyle = document.querySelector('input[name="style"]:checked').value;
 
     // Create a prompt using the fixed phrase with the selected style
-    const prompt = `Convert this code to art using ${selectedStyle} style and all words are in english.\nCode:\n${editorContent}`;
+    const prompt = `Convert this code to art using ${selectedStyle} style and all words are in english. It is a very informative drawing and cartoonish and simple in nature. Intelligent as well. \nCode:\n${editorContent}`;
 
     // Clear previous content and show the loader
     const loader = document.getElementById("loader");
