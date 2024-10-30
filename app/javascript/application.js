@@ -6,15 +6,15 @@ document.getElementById("create").addEventListener("click", async function() {
     const selectedStyle = document.querySelector('input[name="style"]:checked').value;
 
     // Create a prompt using the fixed phrase with the selected style
-    const prompt = `Draw a simplified, dumb, representation of the image in ${selectedStyle} style.\nCode:\n${editorContent}`;
-
-    // Show the loader and clear any previous content
-    const loader = document.getElementById("loader");
-    const responseContent = document.getElementById("response-content");
+    const prompt = `Convert this code to art using ${selectedStyle} style and all words are in english.\nCode:\n${editorContent}`;
 
     // Clear previous content and show the loader
-    responseContent.innerHTML = "";
-    loader.style.display = "block";
+    const loader = document.getElementById("loader");
+    const responseContent = document.getElementById("response-content");
+    responseContent.innerHTML = ""; // Clear previous content
+
+    console.log("Showing loader...");
+    loader.style.display = "block"; // Show loader
 
     try {
         const response = await fetch("/imagination/create_ai_powered_image", {
@@ -29,7 +29,8 @@ document.getElementById("create").addEventListener("click", async function() {
 
         const data = await response.json();
 
-        // Hide the loader
+        // Hide the loader after receiving the response
+        console.log("Hiding loader...");
         loader.style.display = "none";
 
         // Display error if response has an error
@@ -55,7 +56,8 @@ document.getElementById("create").addEventListener("click", async function() {
         console.error("Error:", error);
         responseContent.innerText = "An error occurred. Check the console for details.";
     } finally {
-        // Hide the loader in case of any errors as well
+        // Ensure the loader is hidden in case of any errors as well
         loader.style.display = "none";
     }
 });
+

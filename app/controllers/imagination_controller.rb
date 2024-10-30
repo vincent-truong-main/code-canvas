@@ -17,12 +17,14 @@ class ImaginationController < ApplicationController
     http.use_ssl = true
 
     request = Net::HTTP::Post.new(uri)
-    request["Authorization"] = "Bearer #{ENV['OPENAI_API_KEY']}"
+    request["Authorization"] = "Bearer #{ENV['OPEN_AI_KEY']}"
+
     request["Content-Type"] = "application/json"
     request.body = {
+      model: "dall-e-3",
       prompt: prompt,
       n: 1, # Request one image
-      size: "512x512" # Image size
+      size: "1024x1024" # Image size
     }.to_json
 
     # Make the request and parse response

@@ -15,8 +15,8 @@
  */
 /* General Styles */
 body {
-    font-family: "Arial", sans-serif;
-    background-color: #f4f5f7;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fef8e7;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,17 +37,22 @@ body {
 /* Window Styling */
 .window {
     background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    border: 2px solid #ffd966;
+    border-radius: 20px;
     width: 400px;
     height: 500px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     position: relative;
     padding-top: 40px;
+    transition: transform 0.2s ease;
+}
+
+.window:hover {
+    transform: translateY(-5px);
 }
 
 .title {
@@ -55,8 +60,8 @@ body {
     top: -15px;
     background-color: #2A60E4; /* Clio Legal Blue */
     color: white;
-    padding: 8px 16px;
-    border-radius: 8px;
+    padding: 10px 20px;
+    border-radius: 20px;
     font-weight: bold;
     font-size: 16px;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
@@ -76,16 +81,16 @@ body {
 #code-editor {
     width: 100%;
     height: 90%;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border: 2px solid #ffd966;
+    border-radius: 10px;
     padding: 15px;
     font-family: monospace;
     font-size: 14px;
     resize: none;
     outline: none;
-    background-color: #f7f8fa;
+    background-color: #fff9db;
     color: #333;
-    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
 }
 
 /* Style Selection */
@@ -95,9 +100,9 @@ body {
     align-items: center;
     padding: 20px;
     background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ffd966;
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     width: 200px;
     text-align: center;
 }
@@ -111,30 +116,36 @@ body {
 
 .create-button {
     padding: 12px 20px;
-    background-color: #2A60E4;
+    background-color: #2A60E4; /* Coral color */
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
     margin-top: 10px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s;
 }
 
 .create-button:hover {
-    background-color: #1a46b5;
+    background-color: #1e49b5; /* Darker coral */
+    transform: translateY(-3px);
 }
 
 /* Loader Styling */
 .loader {
     border: 6px solid #f3f3f3;
-    border-top: 6px solid #2A60E4;
+    border-top: 6px solid #2A60E4; /* Clio Blue for visibility */
     border-radius: 50%;
     width: 40px;
     height: 40px;
     animation: spin 1s linear infinite;
-    display: none; /* Hidden by default */
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10; /* Ensure it appears above other content */
 }
 
 @keyframes spin {
