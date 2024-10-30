@@ -1,0 +1,106 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0 50px;
+    background-color: #E0F7FA;
+}
+
+.window {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+}
+
+.title {
+    position: absolute;
+    top: -20px;
+    background-color: #ffffff;
+    padding: 5px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#code-editor {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 15px;
+    font-family: monospace;
+    font-size: 16px;
+    resize: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.style-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.radio-group label {
+    display: block;
+    margin: 8px 0;
+}
+
+.create-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #FF6FD8, #3813C2);
+    color: white;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: transform 0.2s;
+    text-transform: uppercase;
+}
+
+.create-button:hover {
+    transform: scale(1.05);
+}

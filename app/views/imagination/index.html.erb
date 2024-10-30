@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Styled Selection App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="window" id="window1">
+  <div class="title">Code</div>
+  <div class="content">
+    <textarea id="code-editor" placeholder="Write your code here..."></textarea>
+  </div>
+</div>
+
+<div class="style-selection">
+  <div class="radio-group">
+    <label><input type="radio" name="style" value="lawyer" checked> Lawyer style</label>
+    <label><input type="radio" name="style" value="tech"> Tech style</label>
+    <label><input type="radio" name="style" value="innovative"> Innovative style</label>
+  </div>
+  <button id="create" class="create-button">Create</button>
+</div>
+
+<div class="window" id="window2">
+  <div class="title">Art</div>
+  <div class="content" id="response-content"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
