@@ -3,36 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Styled Selection App</title>
-  <link rel="stylesheet" href="/assets/style.css">
+  <title>Code Canvas App</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="window" id="window1">
-  <div class="title">Code</div>
-  <div class="content">
-    <textarea id="code-editor" placeholder="Write your code here..."></textarea>
+<div class="container">
+  <div class="window" id="window1">
+    <div class="title">Code</div>
+    <div class="content">
+      <textarea id="code-editor" placeholder="Write your code here..."></textarea>
+    </div>
   </div>
-</div>
 
-<div class="style-selection">
-  <div class="radio-group">
-    <label><input type="radio" name="style" value="lawyer" checked> Lawyer style</label>
-    <label><input type="radio" name="style" value="tech"> Tech style</label>
-    <label><input type="radio" name="style" value="innovative"> Innovative style</label>
+  <div class="style-selection">
+    <div class="radio-group">
+      <label><input type="radio" name="style" value="lawyer" checked> Lawyer Style</label>
+      <label><input type="radio" name="style" value="tech"> Tech Style</label>
+      <label><input type="radio" name="style" value="innovative"> Innovative Style</label>
+    </div>
+    <button id="create" class="create-button">Generate Image</button>
   </div>
-  <button id="create" class="create-button">Create</button>
-</div>
 
-<div class="window" id="window2">
-  <div class="title">Art</div>
-  <div class="content" id="response-content">
-    <div class="window" id="window2">
-      <div class="title">Art</div>
-      <div class="content" id="response-content">
-        <div class="loader" id="loader"></div>
-      </div>
+  <div class="window" id="window2">
+    <div class="title">Art</div>
+    <div class="content" id="response-content">
+      <div class="loader" id="loader"></div>
     </div>
   </div>
 </div>
+
+<script src="script.js"></script>
 </body>
 </html>
