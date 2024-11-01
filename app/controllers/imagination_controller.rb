@@ -18,7 +18,6 @@ class ImaginationController < ApplicationController
 
     request = Net::HTTP::Post.new(uri)
     request["Authorization"] = "Bearer #{ENV['OPEN_AI_KEY']}"
-
     request["Content-Type"] = "application/json"
     request.body = {
       model: "dall-e-3",

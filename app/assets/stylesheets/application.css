@@ -132,10 +132,29 @@ body {
     transform: translateY(-3px);
 }
 
-/* Loader Styling */
+#window2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Allows elements inside to center vertically */
+    position: relative;
+}
+
+/* Ensure #response-content also centers its contents */
+#response-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%; /* Ensures it fills #window2 */
+    height: 100%; /* Ensures it fills #window2 */
+}
+
+/* Centering the loader with absolute positioning */
+/* Absolute centering within #response-content */
 .loader {
     border: 6px solid #f3f3f3;
-    border-top: 6px solid #2A60E4; /* Clio Blue for visibility */
+    border-top: 6px solid #2A60E4; /* Clio Blue */
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -144,11 +163,27 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10; /* Ensure it appears above other content */
+    transform: translate(-50%, -50%); /* Centers it exactly in the middle */
+    z-index: 10; /* Ensures it’s above other content */
 }
 
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+#code-metrics {
+    margin-top: 15px;
+    text-align: left;
+    color: #555;
+}
+
+#code-metrics p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.code-metrics{
+    width: 200px;
+
 }

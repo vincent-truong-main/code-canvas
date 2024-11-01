@@ -5,16 +5,24 @@ document.getElementById("create").addEventListener("click", async function() {
     const editorContent = document.getElementById("code-editor").value;
     const selectedStyle = document.querySelector('input[name="style"]:checked').value;
 
-    // Create a prompt using the fixed phrase with the selected style
-    const prompt = `Convert this code to art using ${selectedStyle} style and all words are in english. It is a very informative drawing and cartoonish and simple in nature. Intelligent as well. Positive. Useful. No Limits. Beautiful. Distilled. Simplest image possible.\nCode:\n${editorContent}`;
+    // Static Analysis
+    const loc = editorContent.split("\n").filter(line => line.trim() !== "").length; // Lines of Code
+    const functionCount = (editorContent.match(/function\s+\w+|=>|def\s+\w+|class\s+\w+/g) || []).length; // Number of functions
+    const complexity = (editorContent.match(/if|else if|while|for|case|catch|switch|&&|\|\|/g) || []).length + 1; // Cyclomatic Complexity
+
+    // Update metrics in the HTML
+    document.getElementById("loc-count").innerText = loc;
+    document.getElementById("function-count").innerText = functionCount;
+    document.getElementById("complexity-count").innerText = complexity;
 
     // Clear previous content and show the loader
     const loader = document.getElementById("loader");
     const responseContent = document.getElementById("response-content");
-    responseContent.innerHTML = ""; // Clear previous content
-
-    console.log("Showing loader...");
     loader.style.display = "block"; // Show loader
+    responseContent.querySelectorAll("img").forEach(img => img.remove()); // Remove previous images only
+
+    // Create the prompt using the selected style and code content
+    const prompt = `Convert this code to simple art in ${selectedStyle} style and all words are in english. It is a very informative drawing and cartoonish and simple in nature. Intelligent as well. Positive. Useful. No Limits. Beautiful. Distilled. Simplest image possible.`;
 
     try {
         const response = await fetch("/imagination/create_ai_powered_image", {
@@ -22,15 +30,12 @@ document.getElementById("create").addEventListener("click", async function() {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({
-                prompt: prompt
-            })
+            body: JSON.stringify({ prompt: prompt })
         });
 
         const data = await response.json();
 
         // Hide the loader after receiving the response
-        console.log("Hiding loader...");
         loader.style.display = "none";
 
         // Display error if response has an error
@@ -60,4 +65,3 @@ document.getElementById("create").addEventListener("click", async function() {
         loader.style.display = "none";
     }
 });
-

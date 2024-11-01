@@ -22,6 +22,7 @@
       <label><input type="radio" name="style" value="tech"> Tech Style</label>
       <label><input type="radio" name="style" value="innovative"> Innovative Style</label>
       <label><input type="radio" name="style" value="analysis"> Analysis Style</label>
+      <label><input type="radio" name="style" value="geometric"> Geometric Style</label>
     </div>
     <button id="create" class="create-button">Generate Image</button>
   </div>
@@ -30,6 +31,18 @@
     <div class="title">Art</div>
     <div class="content" id="response-content">
       <div class="loader" id="loader"></div>
+    </div>
+  </div>
+
+  <div class="code-metrics" id="window2">
+    <div class="content" id="response-content">
+      <div class="loader" id="loader"></div>
+      <!-- New div to display analysis results -->
+      <div id="code-metrics">
+        <p><strong>Lines of Code:</strong> <span id="loc-count">0</span></p>
+        <p><strong>Function Count:</strong> <span id="function-count">0</span></p>
+        <p><strong>Cyclomatic Complexity:</strong> <span id="complexity-count">0</span></p>
+      </div>
     </div>
   </div>
 </div>
