@@ -22,7 +22,7 @@ document.getElementById("create").addEventListener("click", async function() {
     responseContent.querySelectorAll("img").forEach(img => img.remove()); // Remove previous images only
 
     // Create the prompt using the selected style and code content
-    const prompt = `Convert this code to simple art in ${selectedStyle} style and all words are in english. It is a very informative drawing and cartoonish and simple in nature. Intelligent as well. Positive. Useful. No Limits. Beautiful. Distilled. Simplest image possible.`;
+    const prompt = `Generate simple art of this code ${editorContent} in ${selectedStyle} style`;
 
     try {
         const response = await fetch("/imagination/create_ai_powered_image", {
